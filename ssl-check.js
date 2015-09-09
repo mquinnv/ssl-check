@@ -121,7 +121,7 @@ prog
         }
         if(moment(valid_to).subtract(8,'days').isAfter(today)) {
           hook({
-            msg: '<https' + monitor.url.substring(4) + '|' + monitor.friendlyname + '> ' + moment(valid_to).fromNow(),
+            msg: '<https' + monitor.url.substring(4) + '|' + monitor.friendlyname + '> until ' + moment(valid_to).format('D-MMM-YYYY'),
             title: 'Renewal',
             color: 'good'
           });
