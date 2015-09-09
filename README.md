@@ -3,14 +3,14 @@ Utility to monitor SSL renewal dates for UptimeRobot checks
 
 Setup:
 ===
-in the var directory, make a file named api:
+in the var directory, create a new file named _api_ that looks like:
 ```javascript
 module.exports = 'uxxxx-xxxxxxxxxxxx';
 ```
-then put a file named slack:
+then create a file named _slack_ that looks like:
 ```javascript
 module.exports = {
-  hook: 'https://hook.slack.com/services/XXXX",
+  hook: 'https://hook.slack.com/services/XXXX',
   channel: '#ssl (defaults to #general)'
 };
 ```
