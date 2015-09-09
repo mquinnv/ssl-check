@@ -15,7 +15,7 @@ module.exports = {
 };
 ```
 
-Usage: ssl-check [command]
+Usage: ssl-check [options] [command]
 ===
 Commands:
 ---
