@@ -19,11 +19,11 @@ Usage: ssl-check [command]
 ===
 Commands:
 ---
-update      check every site and update local db with cert expiry
-insert      get the list of checks from UptimeRobot and insert any missing ones into local db
-recheck     recheck each expired or expiring cert and notify slack on renewal
-notify      notify slack channel about any expring or expired certs
-help [cmd]  display help for [cmd]
+* update      check every site and update local db with cert expiry
+* insert      get the list of checks from UptimeRobot and insert any missing ones into local db
+* recheck     recheck each expired or expiring cert and notify slack on renewal
+* notify      notify slack channel about any expring or expired certs
+* help [cmd]  display help for [cmd]
 
 Options:
 ---
