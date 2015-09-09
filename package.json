@@ -1,6 +1,6 @@
 {
   "name": "ssl-check",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SSL Cert Checker",
   "main": "index.js",
   "repository": "https://github.com/mquinnv/ssl-check.git",
