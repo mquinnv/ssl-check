@@ -14,7 +14,7 @@ var Datastore = require('nedb'),
   slack = new Slack(),
   _ = require('lodash');
 var data = {
-  apiKey: require('./var/api'),
+  apiKey: require('./var/uptimeRobot'),
   format: 'json',
   noJsonCallback:1
 };
@@ -43,7 +43,8 @@ prog
 .version('1.0.0');
 
 prog
-.command('update', 'check every site and update local db with cert expiry')
+.command('update')
+.description('check every site and update local db with cert expiry')
 .action(function() {
   db.find({}, function(err, monitors) {
     monitors.forEach(function(monitor) {
@@ -61,7 +62,8 @@ prog
   });
 });
 prog
-.command('insert','get the list of checks from UptimeRobot and insert any missing ones into local db')
+.command('insert')
+.description('get the list of checks from UptimeRobot and insert any missing ones into local db')
 .action(function () {
   // grab 50 monitors starting with offset and add to db if not present
   function fetch(offset) {
@@ -104,7 +106,8 @@ prog
   checkNext(0);
 });
 prog
-.command('recheck', 'recheck each expired or expiring cert and notify slack on renewal')
+.command('recheck')
+.description('recheck each expired or expiring cert and notify slack on renewal')
 .action(function() {
   var today = moment();
   db.find({ valid_to: { $lt: moment().add(7, 'days').toDate()}}, function(err, monitors) {
@@ -130,7 +133,8 @@ prog
   });
 });
 prog
-.command('notify', 'notify slack channel about any expring or expired certs')
+.command('notify')
+.description('notify slack channel about any expring or expired certs')
 .action(function() {
   var today = moment();
   db.find( { valid_to: { $lt : moment().add(7,'days').toDate()}}, function(err,monitors) {
