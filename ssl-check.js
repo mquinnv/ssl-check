@@ -49,6 +49,7 @@ prog
   db.find({}, function(err, monitors) {
     monitors.forEach(function(monitor) {
       if(monitor.url.indexOf('http://') === 0) {
+        console.log(monitor.url);
         https.get('https' + monitor.url.substring(4), function(res) {
           var cert = res.socket.getPeerCertificate();
           var valid_to = new Date(cert.valid_to);
